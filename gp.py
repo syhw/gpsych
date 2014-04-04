@@ -21,8 +21,8 @@ def smooth_diff(y, smoothing=10):
     return ret
 
 
-autocorr = 1. # default autocorrelation between points
-target = 1.7 # y value (f(x) value) for which we seek the x
+autocorr = 1. # default autocorrelation between points TODO var
+target = 1.7 # y value (f(x) value) for which we seek the x TODO var
 n_start_points = 2 # number of points that we know for sure
                    # (left and right extremes, thus multiply by 2.)
 # now for the extreme points for which we already now the y-values:
@@ -32,13 +32,12 @@ n_start_points = 2 # number of points that we know for sure
 # for instance values above 3 for left and below 7 for right give bad results
 left_point = 1.5 # known x for which y (f(x)) is 1
 right_point = 8.5 # known x for which y (f(x)) is 2
-epsilon = 1e-12
-n_points = 12 # number of points (on the x axis) that we use
-n_samples_per_points = 5 # number of trials/samples for each point
-# TODO seek optimization of (n_points x n_samples_per_points) for lowest error
+epsilon = 1e-12 # TODO var
+n_points = 12 # number of points (on the x axis) that we use TODO 1000
+n_samples_per_points = 5 # number of trials/samples for each point TODO var
 min_stddev = 0.1
 x_meshing = 800 # number of samples on the x axis for plotting/estimating
-PLOT = True # do we output the plotting of the GP?
+PLOT = False # do we output the plotting of the GP?
 n_estims = 1 # number of estimations for statistical error on x (for which f(x) = target)
 if n_estims > 1:
     PLOT = False # do not plot is we are estimating the statistical error
